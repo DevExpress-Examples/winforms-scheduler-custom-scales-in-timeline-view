@@ -75,7 +75,7 @@ Namespace TimelineTimeScales
             End If
 
             Dim cell As DevExpress.XtraScheduler.Drawing.TimeCell = CType(e.ObjectInfo, DevExpress.XtraScheduler.Drawing.TimeCell)
-            If cell.Selected AndAlso (control.Focused OrElse (Not control.OptionsView.HideSelection)) Then
+            If cell.Selected AndAlso (control.Focused OrElse Not control.OptionsView.HideSelection) Then
                 cell.SelectionAppearance.FillRectangle(cell.Cache, cell.ContentBounds)
                 e.Handled = True
                 Return

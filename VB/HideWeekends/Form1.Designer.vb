@@ -52,12 +52,12 @@ Namespace TimelineTimeScales
             Me.panelControl1 = New DevExpress.XtraEditors.PanelControl()
             Me.checkEdit2 = New DevExpress.XtraEditors.CheckEdit()
             Me.checkEdit1 = New DevExpress.XtraEditors.CheckEdit()
-            DirectCast(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.panelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.panelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.panelControl1.SuspendLayout()
-            DirectCast(Me.checkEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.checkEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.checkEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.checkEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             ' 
             ' schedulerControl1
@@ -127,12 +127,12 @@ Namespace TimelineTimeScales
             Me.Controls.Add(Me.panelControl1)
             Me.Name = "Form1"
             Me.Text = "Form1"
-            DirectCast(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.panelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.panelControl1, System.ComponentModel.ISupportInitialize).EndInit()
             Me.panelControl1.ResumeLayout(False)
-            DirectCast(Me.checkEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.checkEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.checkEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+            CType(Me.checkEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
 
         End Sub
