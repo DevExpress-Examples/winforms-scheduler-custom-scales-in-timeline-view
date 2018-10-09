@@ -48,7 +48,7 @@ Namespace TimelineTimeScales
             Dim timeScaleFixedInterval1 As New DevExpress.XtraScheduler.TimeScaleFixedInterval()
             Dim timeRuler2 As New DevExpress.XtraScheduler.TimeRuler()
             Me.schedulerControl1 = New DevExpress.XtraScheduler.SchedulerControl()
-            Me.schedulerStorage1 = New DevExpress.XtraScheduler.SchedulerStorage(Me.components)
+            Me.schedulerStorage1 = New DevExpress.XtraScheduler.SchedulerDataStorage(Me.components)
             Me.panelControl1 = New DevExpress.XtraEditors.PanelControl()
             Me.checkEdit2 = New DevExpress.XtraEditors.CheckEdit()
             Me.checkEdit1 = New DevExpress.XtraEditors.CheckEdit()
@@ -68,7 +68,7 @@ Namespace TimelineTimeScales
             Me.schedulerControl1.Name = "schedulerControl1"
             Me.schedulerControl1.Size = New System.Drawing.Size(649, 438)
             Me.schedulerControl1.Start = New Date(2009, 2, 6, 0, 0, 0, 0)
-            Me.schedulerControl1.Storage = Me.schedulerStorage1
+            Me.schedulerControl1.DataStorage = Me.schedulerStorage1
             Me.schedulerControl1.TabIndex = 0
             Me.schedulerControl1.Text = "schedulerControl1"
             Me.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler1)
@@ -140,7 +140,7 @@ Namespace TimelineTimeScales
         #End Region
 
         Private WithEvents schedulerControl1 As DevExpress.XtraScheduler.SchedulerControl
-        Private schedulerStorage1 As DevExpress.XtraScheduler.SchedulerStorage
+        Private schedulerStorage1 As DevExpress.XtraScheduler.SchedulerDataStorage
         Private panelControl1 As DevExpress.XtraEditors.PanelControl
         Private WithEvents checkEdit1 As DevExpress.XtraEditors.CheckEdit
         Private WithEvents checkEdit2 As DevExpress.XtraEditors.CheckEdit
