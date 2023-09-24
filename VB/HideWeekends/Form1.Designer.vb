@@ -1,4 +1,4 @@
-﻿' Developer Express Code Central Example:
+' Developer Express Code Central Example:
 ' Three discontinuous custom time scales for the Timeline view
 ' 
 ' This example illustrates three discontinuous custom scales for the Timeline view
@@ -11,9 +11,10 @@
 ' 
 ' You can find sample updates and versions for different programming languages here:
 ' http://www.devexpress.com/example=E1480
-
 Namespace TimelineTimeScales
-    Partial Public Class Form1
+
+    Partial Class Form1
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -24,40 +25,40 @@ Namespace TimelineTimeScales
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+'#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
         ''' </summary>
         Private Sub InitializeComponent()
             Me.components = New System.ComponentModel.Container()
-            Dim timeRuler1 As New DevExpress.XtraScheduler.TimeRuler()
-            Dim timeScaleYear1 As New DevExpress.XtraScheduler.TimeScaleYear()
-            Dim timeScaleQuarter1 As New DevExpress.XtraScheduler.TimeScaleQuarter()
-            Dim timeScaleMonth1 As New DevExpress.XtraScheduler.TimeScaleMonth()
-            Dim timeScaleWeek1 As New DevExpress.XtraScheduler.TimeScaleWeek()
-            Dim timeScaleDay1 As New DevExpress.XtraScheduler.TimeScaleDay()
-            Dim timeScaleHour1 As New DevExpress.XtraScheduler.TimeScaleHour()
-            Dim timeScaleFixedInterval1 As New DevExpress.XtraScheduler.TimeScaleFixedInterval()
-            Dim timeRuler2 As New DevExpress.XtraScheduler.TimeRuler()
+            Dim timeRuler1 As DevExpress.XtraScheduler.TimeRuler = New DevExpress.XtraScheduler.TimeRuler()
+            Dim timeScaleYear1 As DevExpress.XtraScheduler.TimeScaleYear = New DevExpress.XtraScheduler.TimeScaleYear()
+            Dim timeScaleQuarter1 As DevExpress.XtraScheduler.TimeScaleQuarter = New DevExpress.XtraScheduler.TimeScaleQuarter()
+            Dim timeScaleMonth1 As DevExpress.XtraScheduler.TimeScaleMonth = New DevExpress.XtraScheduler.TimeScaleMonth()
+            Dim timeScaleWeek1 As DevExpress.XtraScheduler.TimeScaleWeek = New DevExpress.XtraScheduler.TimeScaleWeek()
+            Dim timeScaleDay1 As DevExpress.XtraScheduler.TimeScaleDay = New DevExpress.XtraScheduler.TimeScaleDay()
+            Dim timeScaleHour1 As DevExpress.XtraScheduler.TimeScaleHour = New DevExpress.XtraScheduler.TimeScaleHour()
+            Dim timeScaleFixedInterval1 As DevExpress.XtraScheduler.TimeScaleFixedInterval = New DevExpress.XtraScheduler.TimeScaleFixedInterval()
+            Dim timeRuler2 As DevExpress.XtraScheduler.TimeRuler = New DevExpress.XtraScheduler.TimeRuler()
             Me.schedulerControl1 = New DevExpress.XtraScheduler.SchedulerControl()
             Me.schedulerStorage1 = New DevExpress.XtraScheduler.SchedulerStorage(Me.components)
             Me.panelControl1 = New DevExpress.XtraEditors.PanelControl()
             Me.checkEdit2 = New DevExpress.XtraEditors.CheckEdit()
             Me.checkEdit1 = New DevExpress.XtraEditors.CheckEdit()
-            DirectCast(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.panelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.schedulerControl1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.schedulerStorage1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.panelControl1), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.panelControl1.SuspendLayout()
-            DirectCast(Me.checkEdit2.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.checkEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.checkEdit2.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.checkEdit1.Properties), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             ' 
             ' schedulerControl1
@@ -67,7 +68,7 @@ Namespace TimelineTimeScales
             Me.schedulerControl1.Location = New System.Drawing.Point(0, 30)
             Me.schedulerControl1.Name = "schedulerControl1"
             Me.schedulerControl1.Size = New System.Drawing.Size(649, 438)
-            Me.schedulerControl1.Start = New Date(2009, 2, 6, 0, 0, 0, 0)
+            Me.schedulerControl1.Start = New System.DateTime(2009, 2, 6, 0, 0, 0, 0)
             Me.schedulerControl1.Storage = Me.schedulerStorage1
             Me.schedulerControl1.TabIndex = 0
             Me.schedulerControl1.Text = "schedulerControl1"
@@ -83,9 +84,10 @@ Namespace TimelineTimeScales
             Me.schedulerControl1.Views.TimelineView.Scales.Add(timeScaleDay1)
             Me.schedulerControl1.Views.TimelineView.Scales.Add(timeScaleHour1)
             Me.schedulerControl1.Views.TimelineView.Scales.Add(timeScaleFixedInterval1)
-            Me.schedulerControl1.Views.TimelineView.WorkTime.End = System.TimeSpan.Parse("21:00:00")
+            Me.schedulerControl1.Views.TimelineView.WorkTime.[End] = System.TimeSpan.Parse("21:00:00")
             Me.schedulerControl1.Views.TimelineView.WorkTime.Start = System.TimeSpan.Parse("06:00:00")
             Me.schedulerControl1.Views.WorkWeekView.TimeRulers.Add(timeRuler2)
+            AddHandler Me.schedulerControl1.SelectionChanged, New System.EventHandler(AddressOf Me.schedulerControl1_SelectionChanged)
             ' 
             ' panelControl1
             ' 
@@ -107,6 +109,7 @@ Namespace TimelineTimeScales
             Me.checkEdit2.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
             Me.checkEdit2.Size = New System.Drawing.Size(102, 22)
             Me.checkEdit2.TabIndex = 1
+            AddHandler Me.checkEdit2.CheckedChanged, New System.EventHandler(AddressOf Me.checkEdit2_CheckedChanged)
             ' 
             ' checkEdit1
             ' 
@@ -117,6 +120,7 @@ Namespace TimelineTimeScales
             Me.checkEdit1.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far
             Me.checkEdit1.Size = New System.Drawing.Size(130, 22)
             Me.checkEdit1.TabIndex = 0
+            AddHandler Me.checkEdit1.CheckedChanged, New System.EventHandler(AddressOf Me.checkEdit1_CheckedChanged)
             ' 
             ' Form1
             ' 
@@ -127,23 +131,24 @@ Namespace TimelineTimeScales
             Me.Controls.Add(Me.panelControl1)
             Me.Name = "Form1"
             Me.Text = "Form1"
-            DirectCast(Me.schedulerControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.schedulerStorage1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.panelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.schedulerControl1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.schedulerStorage1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.panelControl1), System.ComponentModel.ISupportInitialize).EndInit()
             Me.panelControl1.ResumeLayout(False)
-            DirectCast(Me.checkEdit2.Properties, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.checkEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.checkEdit2.Properties), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.checkEdit1.Properties), System.ComponentModel.ISupportInitialize).EndInit()
             Me.ResumeLayout(False)
-
         End Sub
 
-        #End Region
+'#End Region
+        Private schedulerControl1 As DevExpress.XtraScheduler.SchedulerControl
 
-        Private WithEvents schedulerControl1 As DevExpress.XtraScheduler.SchedulerControl
         Private schedulerStorage1 As DevExpress.XtraScheduler.SchedulerStorage
+
         Private panelControl1 As DevExpress.XtraEditors.PanelControl
-        Private WithEvents checkEdit1 As DevExpress.XtraEditors.CheckEdit
-        Private WithEvents checkEdit2 As DevExpress.XtraEditors.CheckEdit
+
+        Private checkEdit1 As DevExpress.XtraEditors.CheckEdit
+
+        Private checkEdit2 As DevExpress.XtraEditors.CheckEdit
     End Class
 End Namespace
-
