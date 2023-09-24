@@ -1,11 +1,10 @@
-﻿Imports System
+Imports System
 Imports System.Collections.Generic
-Imports System.Text
 Imports DevExpress.XtraScheduler
 Imports DevExpress.XtraScheduler.Native
 
-
 Namespace TimelineTimeScales
+
     Public Class TimeScaleWorkWeekDay
         Inherits TimeScale
 
@@ -17,31 +16,34 @@ Namespace TimelineTimeScales
             DaysToIgnore.Add(DayOfWeek.Sunday)
         End Sub
 
-        Protected Overrides ReadOnly Property DefaultDisplayFormat() As String
+        Protected Overrides ReadOnly Property DefaultDisplayFormat As String
             Get
                 Return "d ddd"
             End Get
         End Property
-        Protected Overrides ReadOnly Property DefaultDisplayName() As String
+
+        Protected Overrides ReadOnly Property DefaultDisplayName As String
             Get
                 Return "Custom Day"
             End Get
         End Property
-        Protected Overrides ReadOnly Property DefaultMenuCaption() As String
+
+        Protected Overrides ReadOnly Property DefaultMenuCaption As String
             Get
                 Return "Custom Day"
             End Get
         End Property
-        Protected Overrides ReadOnly Property SortingWeight() As TimeSpan
+
+        Protected Overrides ReadOnly Property SortingWeight As TimeSpan
             Get
                 Return TimeSpan.FromDays(1)
             End Get
         End Property
-        Private Property DaysToIgnore() As List(Of DayOfWeek)
+
+        Private Property DaysToIgnore As List(Of DayOfWeek)
 
         Public Overrides Function Floor(ByVal [date] As Date) As Date
             Dim time As TimeSpan = [date].TimeOfDay
-
             If time >= StartTime Then
                 [date] = RoundToHour([date], StartTime)
             Else
@@ -49,7 +51,6 @@ Namespace TimelineTimeScales
             End If
 
             [date] = SkipSomeDays([date], -1)
-
             Return [date]
         End Function
 
@@ -59,7 +60,6 @@ Namespace TimelineTimeScales
 
         Public Overrides Function GetNextDate(ByVal [date] As Date) As Date
             Dim time As TimeSpan = [date].TimeOfDay
-
             If time < StartTime Then
                 [date] = RoundToHour([date], StartTime)
             Else
@@ -67,7 +67,6 @@ Namespace TimelineTimeScales
             End If
 
             [date] = SkipSomeDays([date], 1)
-
             Return [date]
         End Function
 
@@ -78,22 +77,20 @@ Namespace TimelineTimeScales
         Private Function SkipSomeDays(ByVal [date] As Date, ByVal skipDayCount As Integer) As Date
             Dim count As Integer = DaysToIgnore.Count
             For i As Integer = 0 To count - 1
-                If Not DaysToIgnore.Contains([date].DayOfWeek) Then
-                    Return [date]
-                End If
+                If Not DaysToIgnore.Contains([date].DayOfWeek) Then Return [date]
                 [date] = [date].AddDays(skipDayCount)
-            Next i
+            Next
+
             Return [date]
         End Function
     End Class
-
 
     Public Class TimeScaleLessThanDay
         Inherits TimeScaleFixedInterval
 
         Private Shared ReadOnly StartTimeLimitation As TimeSpan = TimeSpan.FromHours(6)
-        Private Shared ReadOnly EndTimeLimitation As TimeSpan = TimeSpan.FromHours(21)
 
+        Private Shared ReadOnly EndTimeLimitation As TimeSpan = TimeSpan.FromHours(21)
 
         Public Sub New(ByVal scaleValue As TimeSpan)
             MyBase.New(scaleValue)
@@ -102,36 +99,35 @@ Namespace TimelineTimeScales
             DaysToIgnore.Add(DayOfWeek.Sunday)
         End Sub
 
-        Public ReadOnly Property StartTime() As TimeSpan
+        Public ReadOnly Property StartTime As TimeSpan
             Get
                 Return StartTimeLimitation
             End Get
         End Property
-        Public ReadOnly Property EndTime() As TimeSpan
+
+        Public ReadOnly Property EndTime As TimeSpan
             Get
                 Return EndTimeLimitation
             End Get
         End Property
-        Protected Overrides ReadOnly Property DefaultDisplayFormat() As String
+
+        Protected Overrides ReadOnly Property DefaultDisplayFormat As String
             Get
                 Return "HH:mm"
             End Get
         End Property
-        Private Property DaysToIgnore() As List(Of DayOfWeek)
 
-        Protected Overrides ReadOnly Property SortingWeight() As TimeSpan
+        Private Property DaysToIgnore As List(Of DayOfWeek)
+
+        Protected Overrides ReadOnly Property SortingWeight As TimeSpan
             Get
                 Return Value
             End Get
         End Property
 
         Public Overrides Function Floor(ByVal [date] As Date) As Date
-            If [date] = Date.MinValue OrElse [date] = Date.MaxValue Then
-                Return [date]
-            End If
-
+            If [date] = Date.MinValue OrElse [date] = Date.MaxValue Then Return [date]
             [date] = DateTimeHelper.Floor([date], Value, RoundToHour([date], StartTime))
-
             Dim time As TimeSpan = [date].TimeOfDay
             If time < StartTime Then
                 [date] = RoundToHour([date].AddDays(-1), EndTime)
@@ -145,14 +141,12 @@ Namespace TimelineTimeScales
             End If
 
             [date] = DateTimeHelper.Floor([date], Value, RoundToHour([date], StartTime))
-
-            System.Diagnostics.Debug.Assert((StartTime <= [date].TimeOfDay) AndAlso ([date].TimeOfDay <= EndTime))
+            System.Diagnostics.Debug.Assert(StartTime <= [date].TimeOfDay AndAlso [date].TimeOfDay <= EndTime)
             Return [date]
         End Function
 
         Public Overrides Function GetNextDate(ByVal [date] As Date) As Date
             [date] = If(HasNextDate([date]), [date] + Value, [date])
-
             Dim time As TimeSpan = [date].TimeOfDay
             If time < StartTime Then
                 [date] = RoundToHour([date], StartTime)
@@ -165,18 +159,17 @@ Namespace TimelineTimeScales
                 [date] = RoundToHour(newDate, StartTime)
             End If
 
-            System.Diagnostics.Debug.Assert((StartTime <= [date].TimeOfDay) AndAlso ([date].TimeOfDay <= EndTime))
+            System.Diagnostics.Debug.Assert(StartTime <= [date].TimeOfDay AndAlso [date].TimeOfDay <= EndTime)
             Return [date]
         End Function
 
         Private Function SkipSomeDays(ByVal [date] As Date, ByVal skipDayCount As Integer) As Date
             Dim count As Integer = DaysToIgnore.Count
             For i As Integer = 0 To count - 1
-                If Not DaysToIgnore.Contains([date].DayOfWeek) Then
-                    Return [date]
-                End If
+                If Not DaysToIgnore.Contains([date].DayOfWeek) Then Return [date]
                 [date] = [date].AddDays(skipDayCount)
-            Next i
+            Next
+
             Return [date]
         End Function
 
@@ -188,8 +181,4 @@ Namespace TimelineTimeScales
             Return True
         End Function
     End Class
-
-
-
-
 End Namespace

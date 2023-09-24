@@ -1,4 +1,4 @@
-﻿' Developer Express Code Central Example:
+' Developer Express Code Central Example:
 ' Three discontinuous custom time scales for the Timeline view
 ' 
 ' This example illustrates three discontinuous custom scales for the Timeline view
@@ -11,25 +11,21 @@
 ' 
 ' You can find sample updates and versions for different programming languages here:
 ' http://www.devexpress.com/example=E1480
-
 Imports System
-Imports System.Collections.Generic
 Imports System.Windows.Forms
 
 Namespace TimelineTimeScales
-    Friend NotInheritable Class Program
 
-        Private Sub New()
-        End Sub
+    Friend Module Program
 
         ''' <summary>
         ''' The main entry point for the application.
         ''' </summary>
-        <STAThread> _
-        Shared Sub Main()
-            Application.EnableVisualStyles()
+        <STAThread>
+        Sub Main()
+            Call Application.EnableVisualStyles()
             Application.SetCompatibleTextRenderingDefault(False)
-            Application.Run(New Form1())
+            Call Application.Run(New Form1())
         End Sub
-    End Class
+    End Module
 End Namespace
