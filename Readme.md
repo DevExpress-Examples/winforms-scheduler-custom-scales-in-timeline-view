@@ -3,7 +3,13 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E1480)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# Three discontinuous custom time scales for the Timeline view
+# WinForms Scheduler - Display discontinuous custom time scales in Timeline view
 
+This example displays three discontinuous custom scales in the Timeline view:
 
-<p>This example illustrates three discontinuous custom scales for the Timeline view which are properly aligned. The first scale is a day scale which skips Saturdays and Sundays. The second scale is an hour scale which contains only working hours from 6 to 21. The third scale with increments of 30 minutes displays hours from 6 to 21, like the second scale.<br /></p> 
+1. A day scale withount Saturdays and Sundays.
+2. A hour scale containing only working hours (from 6:00 to 21:00).
+3. A hour scale that displays hours from 6:00 to 21:00 in 30-minute increments. 
+
+![WinForms Scheduler - Display discontinuous custom time scales in Timeline view](https://github.com/DevExpress-Examples/three-discontinuous-custom-time-scales-for-the-timeline-view-e1480/blob/19.1.3%2B/media/winforms-scheduler-timeline.png)
+
