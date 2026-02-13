@@ -15,7 +15,7 @@ This example displays three discontinuous custom scales in the Timeline view:
 ![WinForms Scheduler - Display discontinuous custom time scales in Timeline view](https://raw.githubusercontent.com/DevExpress-Examples/three-discontinuous-custom-time-scales-for-the-timeline-view-e1480/19.1.3%2B/media/winforms-scheduler-timeline.png)
 
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-scheduler-custom-scales-in-timeline-view&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=winforms-scheduler-custom-scales-in-timeline-view&~~~was_helpful=no)
 
