@@ -12,7 +12,7 @@ This example displays three discontinuous custom scales in the Timeline view:
 2. An hour scale containing only working hours (from 6:00 to 21:00).
 3. An hour scale that displays hours from 6:00 to 21:00 in 30-minute increments. 
 
-![WinForms Scheduler - Display discontinuous custom time scales in Timeline view](https://raw.githubusercontent.com/DevExpress-Examples/three-discontinuous-custom-time-scales-for-the-timeline-view-e1480/19.1.3%2B/media/winforms-scheduler-timeline.png)
+![WinForms Scheduler - Display discontinuous custom time scales in Timeline view](media/winforms-scheduler-timeline.png)
 
 <!-- feedback -->
 ## Does This Example Address Your Development Requirements/Objectives?
@@ -21,3 +21,4 @@ This example displays three discontinuous custom scales in the Timeline view:
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
